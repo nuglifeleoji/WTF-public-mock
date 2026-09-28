@@ -1,0 +1,8 @@
+task_file: Task/Set1_tasks/appworld_tasks.json
+method: ace
+model: gpt-5.4
+run_id: appworld_set1
+output_dir: runs
+benchmark_options:
+  data_dir: data/appworld/data
+  max_react_steps: 40

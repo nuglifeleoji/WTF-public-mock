@@ -1,0 +1,11 @@
+task_file: Task/Set1_tasks/swebench_lite_tasks.json
+method: ace
+model: gpt-5.4
+run_id: swebench_set1
+output_dir: runs
+benchmark_options:
+  dataset_name: princeton-nlp/SWE-bench_Lite
+  dataset_revision: 6ec7bb89b9342f664a54a6e0a6ea6501d3437cc2
+  solver_backend: official_prompt
+  max_react_steps: 30
+  use_modal: true

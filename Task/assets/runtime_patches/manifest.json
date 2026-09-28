@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "packages": {
+    "swebench": {
+      "distribution": "swebench",
+      "version": "4.1.0",
+      "upstream": "https://github.com/SWE-bench/SWE-bench",
+      "license": "LICENSE.swebench",
+      "files": [
+        {
+          "path": "swebench/harness/modal_eval/run_evaluation_modal.py",
+          "reason": "Guard the legacy cgroup write and transfer files through sandbox exec instead of deprecated sandbox.open.",
+          "upstream_sha256": "5632a6f4f5e2c042de127fea9b988e7da358fbf1b5ed569ae7d1d84ac0a177f7",
+          "patched_sha256": "f587322eeaae4277da25ba15847e9776c5396d14e48407b317d2681a81a2d197",
+          "replacements": [
+            {
+              "before": "import asyncio\nimport json\n",
+              "after": "import asyncio\nimport base64\nimport json\n"
+            },
+            {
+              "before": "\n        # Hack for pylint\n        self.write_file(\"/sys/fs/cgroup/cpu/cpu.shares\", \"2048\")\n\n",
+              "after": "\n        # Hack for pylint \u2014 cgroups v1 path; missing on cgroups v2 hosts\n        # (modern Modal). Keep this silent and best-effort; failure here should\n        # never fail the evaluation.\n        try:\n            proc = self.sandbox.exec(\n                \"sh\",\n                \"-lc\",\n                \"if [ -w /sys/fs/cgroup/cpu/cpu.shares ]; then \"\n                \"printf 2048 > /sys/fs/cgroup/cpu/cpu.shares; fi\",\n            )\n            proc.wait()\n        except Exception:\n            pass\n\n"
+            },
+            {
+              "before": "    def write_file(self, file_path: str, content: str):\n        self.sandbox.open(file_path, \"w\").write(content)\n\n",
+              "after": "    def write_file(self, file_path: str, content: str):\n        payload = base64.b64encode(content.encode()).decode()\n        script = (\n            \"import base64, pathlib, sys\\n\"\n            \"path = pathlib.Path(sys.argv[1])\\n\"\n            \"if path.parent and str(path.parent) not in ('', '.') and not path.parent.exists():\\n\"\n            \"    path.parent.mkdir(parents=True, exist_ok=True)\\n\"\n            \"path.write_bytes(base64.b64decode(sys.argv[2]))\\n\"\n        )\n        p = self.sandbox.exec(\"python\", \"-c\", script, file_path, payload)\n        stdout = []\n        stderr = []\n        try:\n            asyncio.run(self._read_output(p, stdout, stderr))\n        except Exception as e:\n            print(f\"Error during file write: {e}\")\n        p.wait()\n        if p.returncode != 0:\n            output = \"\".join(stdout + stderr)\n            raise RuntimeError(\n                f\"Failed to write sandbox file {file_path!r}: {output}\"\n            )\n\n"
+            }
+          ]
+        }
+      ]
+    },
+    "terminalbench": {
+      "distribution": "harbor",
+      "version": "0.4.0",
+      "upstream": "https://github.com/harbor-framework/harbor",
+      "license": "LICENSE.harbor",
+      "files": [
+        {
+          "path": "harbor/environments/modal.py",
+          "reason": "Create log directories through exec to avoid Modal file-IO FilesystemExecutionError.",
+          "upstream_sha256": "ed854904f1877a39d951160245f84f06c88a2ab114b8e41aa752365b00272413",
+          "patched_sha256": "dff41d14997352b66978f9c66a770fa0a3113ca1614a9e4cec69b3d639aeaea0",
+          "replacements": [
+            {
+              "before": "\n        await env._sandbox.mkdir.aio(str(EnvironmentPaths.agent_dir), parents=True)\n        await env._sandbox.mkdir.aio(str(EnvironmentPaths.verifier_dir), parents=True)\n\n        # Make log directories world-writable so non-root agent/verifier\n        # users can write to them.\n        await self.exec(\n            f\"chmod 777 {EnvironmentPaths.agent_dir} {EnvironmentPaths.verifier_dir}\"\n",
+              "after": "\n        # Modal's file-IO mkdir path can intermittently return an opaque\n        # FilesystemExecutionError. Create the log directories inside the\n        # sandbox instead; this uses the exec path that agents/verifiers use.\n        await self.exec(\n            \"mkdir -p \"\n            f\"{EnvironmentPaths.agent_dir} {EnvironmentPaths.verifier_dir} && \"\n            f\"chmod 777 {EnvironmentPaths.agent_dir} {EnvironmentPaths.verifier_dir}\"\n"
+            }
+          ]
+        },
+        {
+          "path": "harbor/agents/installed/claude_code.py",
+          "reason": "Preserve ANTHROPIC_AUTH_TOKEN separately from ANTHROPIC_API_KEY.",
+          "upstream_sha256": "3eb0a1ea0223f80b1cdc1a87375b79d2a13d760dad4b6c7d38bb99805ec17813",
+          "patched_sha256": "77de59fdfeaf00849b6ae2f7f08a71413fdd52bd2579280fc0dda347850ae391",
+          "replacements": [
+            {
+              "before": "        env = {\n            \"ANTHROPIC_API_KEY\": os.environ.get(\"ANTHROPIC_API_KEY\")\n            or os.environ.get(\"ANTHROPIC_AUTH_TOKEN\")\n            or \"\",\n            \"ANTHROPIC_BASE_URL\": os.environ.get(\"ANTHROPIC_BASE_URL\", None),\n",
+              "after": "        env = {\n            \"ANTHROPIC_API_KEY\": os.environ.get(\"ANTHROPIC_API_KEY\", \"\"),\n            \"ANTHROPIC_AUTH_TOKEN\": os.environ.get(\"ANTHROPIC_AUTH_TOKEN\", \"\"),\n            \"ANTHROPIC_BASE_URL\": os.environ.get(\"ANTHROPIC_BASE_URL\", None),\n"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

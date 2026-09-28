@@ -1,0 +1,46 @@
+{
+  "collection": "Set1_tasks",
+  "sets": [
+    {
+      "benchmark": "appworld",
+      "set_id": "set1",
+      "split": "test_normal",
+      "n_tasks": 60,
+      "sha256_12": "2cf6defd54ba",
+      "json": "appworld_tasks.json",
+      "txt": "appworld_tasks.txt"
+    },
+    {
+      "benchmark": "browsecomp",
+      "set_id": "set1",
+      "n_tasks": 60,
+      "sha256_12": "b6c52e4892c0",
+      "json": "browsecomp_tasks.json",
+      "txt": "browsecomp_tasks.txt"
+    },
+    {
+      "benchmark": "swebench_lite",
+      "set_id": "set1",
+      "n_tasks": 100,
+      "sha256_12": "1a8349c7a7bf",
+      "json": "swebench_lite_tasks.json",
+      "txt": "swebench_lite_tasks.txt"
+    },
+    {
+      "benchmark": "tau2",
+      "set_id": "set1",
+      "n_tasks": 100,
+      "sha256_12": "876b1c8f5763",
+      "json": "tau2_tasks.json",
+      "txt": "tau2_tasks.txt"
+    },
+    {
+      "benchmark": "terminalbench",
+      "set_id": "set1",
+      "n_tasks": 60,
+      "sha256_12": "d9dde8a1bead",
+      "json": "terminalbench_tasks.json",
+      "txt": "terminalbench_tasks.txt"
+    }
+  ]
+}

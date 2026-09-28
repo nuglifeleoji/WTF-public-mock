@@ -1,0 +1,15 @@
+task_file: Task/Set1_tasks/browsecomp_tasks.json
+method: ace
+model: gpt-5.4
+run_id: browsecomp_set1
+output_dir: runs
+benchmark_options:
+  data_path: data/browsecomp/browsecomp_plus_decrypted.jsonl
+  corpus_path: data/browsecomp/corpus.jsonl
+  corpus_index_path: data/browsecomp/indexes/bm25
+  retriever_backend: pyserini
+  agent_max_iterations: 100
+  agent_max_output_tokens: 10000
+  snippet_max_tokens: 512
+  include_get_document: false
+  query_template: QUERY_TEMPLATE_NO_GET_DOCUMENT

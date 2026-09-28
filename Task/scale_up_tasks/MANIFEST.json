@@ -1,0 +1,241 @@
+{
+  "collection": "scale_up_tasks",
+  "sets": [
+    {
+      "benchmark": "appworld",
+      "set_id": "challenge_set1_30",
+      "split": "test_challenge",
+      "selection_group": "canonical",
+      "n_tasks": 30,
+      "sha256_12": "e5bbc659f32b",
+      "json": "appworld/appworld_challenge_set1_30.json",
+      "txt": "appworld/appworld_challenge_set1_30.txt"
+    },
+    {
+      "benchmark": "appworld",
+      "set_id": "challenge_set2_30",
+      "split": "test_challenge",
+      "selection_group": "canonical",
+      "n_tasks": 30,
+      "sha256_12": "c4b3a2277ffa",
+      "json": "appworld/appworld_challenge_set2_30.json",
+      "txt": "appworld/appworld_challenge_set2_30.txt"
+    },
+    {
+      "benchmark": "appworld",
+      "set_id": "normal_set1_30",
+      "split": "test_normal",
+      "selection_group": "canonical",
+      "n_tasks": 30,
+      "sha256_12": "8c6034e6056e",
+      "json": "appworld/appworld_normal_set1_30.json",
+      "txt": "appworld/appworld_normal_set1_30.txt"
+    },
+    {
+      "benchmark": "appworld",
+      "set_id": "normal_set2_30",
+      "split": "test_normal",
+      "selection_group": "canonical",
+      "n_tasks": 30,
+      "sha256_12": "dd52c949a38a",
+      "json": "appworld/appworld_normal_set2_30.json",
+      "txt": "appworld/appworld_normal_set2_30.txt"
+    },
+    {
+      "benchmark": "appworld",
+      "set_id": "appworld_test_challenge_subset1_30",
+      "split": "test_challenge",
+      "selection_group": "additional_random",
+      "n_tasks": 30,
+      "sha256_12": "ed9ee3f7e87c",
+      "json": "appworld/appworld_test_challenge_subset1_30.json",
+      "txt": "appworld/appworld_test_challenge_subset1_30.txt"
+    },
+    {
+      "benchmark": "appworld",
+      "set_id": "appworld_test_challenge_subset2_30",
+      "split": "test_challenge",
+      "selection_group": "additional_random",
+      "n_tasks": 30,
+      "sha256_12": "d9bb062a7ea0",
+      "json": "appworld/appworld_test_challenge_subset2_30.json",
+      "txt": "appworld/appworld_test_challenge_subset2_30.txt"
+    },
+    {
+      "benchmark": "appworld",
+      "set_id": "appworld_test_normal_subset1_30",
+      "split": "test_normal",
+      "selection_group": "additional_random",
+      "n_tasks": 30,
+      "sha256_12": "b10d135e7dad",
+      "json": "appworld/appworld_test_normal_subset1_30.json",
+      "txt": "appworld/appworld_test_normal_subset1_30.txt"
+    },
+    {
+      "benchmark": "appworld",
+      "set_id": "appworld_test_normal_subset2_30",
+      "split": "test_normal",
+      "selection_group": "additional_random",
+      "n_tasks": 30,
+      "sha256_12": "74109533f1f9",
+      "json": "appworld/appworld_test_normal_subset2_30.json",
+      "txt": "appworld/appworld_test_normal_subset2_30.txt"
+    },
+    {
+      "benchmark": "browsecomp",
+      "set_id": "browsecomp_subset1_30",
+      "n_tasks": 30,
+      "sha256_12": "36a53a568c84",
+      "json": "browsecomp/browsecomp_subset1_30.json",
+      "txt": "browsecomp/browsecomp_subset1_30.txt"
+    },
+    {
+      "benchmark": "browsecomp",
+      "set_id": "browsecomp_subset2_30",
+      "n_tasks": 30,
+      "sha256_12": "5d27bf14fc7e",
+      "json": "browsecomp/browsecomp_subset2_30.json",
+      "txt": "browsecomp/browsecomp_subset2_30.txt"
+    },
+    {
+      "benchmark": "browsecomp",
+      "set_id": "browsecomp_subset3_30",
+      "n_tasks": 30,
+      "sha256_12": "05d0c2c656fb",
+      "json": "browsecomp/browsecomp_subset3_30.json",
+      "txt": "browsecomp/browsecomp_subset3_30.txt"
+    },
+    {
+      "benchmark": "browsecomp",
+      "set_id": "browsecomp_subset4_30",
+      "n_tasks": 30,
+      "sha256_12": "2390f02a5451",
+      "json": "browsecomp/browsecomp_subset4_30.json",
+      "txt": "browsecomp/browsecomp_subset4_30.txt"
+    },
+    {
+      "benchmark": "browsecomp",
+      "set_id": "browsecomp_subset5_30",
+      "n_tasks": 30,
+      "sha256_12": "afa913f350e9",
+      "json": "browsecomp/browsecomp_subset5_30.json",
+      "txt": "browsecomp/browsecomp_subset5_30.txt"
+    },
+    {
+      "benchmark": "swebench",
+      "set_id": "django_30",
+      "split": "test",
+      "repo": "django/django",
+      "n_tasks": 30,
+      "sha256_12": "753e9b86e4a7",
+      "json": "swebench/swebench_django_30.json",
+      "txt": "swebench/swebench_django_30.txt"
+    },
+    {
+      "benchmark": "swebench",
+      "set_id": "matplotlib_23",
+      "split": "test",
+      "repo": "matplotlib/matplotlib",
+      "n_tasks": 23,
+      "sha256_12": "26f2d6e49053",
+      "json": "swebench/swebench_matplotlib_23.json",
+      "txt": "swebench/swebench_matplotlib_23.txt"
+    },
+    {
+      "benchmark": "swebench",
+      "set_id": "sklearn_23",
+      "split": "test",
+      "repo": "scikit-learn/scikit-learn",
+      "n_tasks": 23,
+      "sha256_12": "b00062b2dae5",
+      "json": "swebench/swebench_sklearn_23.json",
+      "txt": "swebench/swebench_sklearn_23.txt"
+    },
+    {
+      "benchmark": "swebench",
+      "set_id": "sympy_30",
+      "split": "test",
+      "repo": "sympy/sympy",
+      "n_tasks": 30,
+      "sha256_12": "ab165883fc87",
+      "json": "swebench/swebench_sympy_30.json",
+      "txt": "swebench/swebench_sympy_30.txt"
+    },
+    {
+      "benchmark": "tau2",
+      "set_id": "airline_set1_30",
+      "split": "base",
+      "domain": "airline",
+      "n_tasks": 30,
+      "sha256_12": "20f776574b08",
+      "json": "tau2/tau2_airline_set1_30.json",
+      "txt": "tau2/tau2_airline_set1_30.txt"
+    },
+    {
+      "benchmark": "tau2",
+      "set_id": "airline_set2_30",
+      "split": "base",
+      "domain": "airline",
+      "n_tasks": 30,
+      "sha256_12": "8795ff0ec5f8",
+      "json": "tau2/tau2_airline_set2_30.json",
+      "txt": "tau2/tau2_airline_set2_30.txt"
+    },
+    {
+      "benchmark": "tau2",
+      "set_id": "retail_set1_30",
+      "split": "base",
+      "domain": "retail",
+      "n_tasks": 30,
+      "sha256_12": "a69c77da1827",
+      "json": "tau2/tau2_retail_set1_30.json",
+      "txt": "tau2/tau2_retail_set1_30.txt"
+    },
+    {
+      "benchmark": "tau2",
+      "set_id": "retail_set2_30",
+      "split": "base",
+      "domain": "retail",
+      "n_tasks": 30,
+      "sha256_12": "a3bc5858b929",
+      "json": "tau2/tau2_retail_set2_30.json",
+      "txt": "tau2/tau2_retail_set2_30.txt"
+    },
+    {
+      "benchmark": "tau2",
+      "set_id": "telecom_set1_30",
+      "split": "base",
+      "domain": "telecom",
+      "n_tasks": 30,
+      "sha256_12": "5f0cd14aaf95",
+      "json": "tau2/tau2_telecom_set1_30.json",
+      "txt": "tau2/tau2_telecom_set1_30.txt"
+    },
+    {
+      "benchmark": "tau2",
+      "set_id": "telecom_set2_30",
+      "split": "base",
+      "domain": "telecom",
+      "n_tasks": 30,
+      "sha256_12": "7b79fe366d08",
+      "json": "tau2/tau2_telecom_set2_30.json",
+      "txt": "tau2/tau2_telecom_set2_30.txt"
+    },
+    {
+      "benchmark": "terminalbench",
+      "set_id": "set1_30",
+      "n_tasks": 30,
+      "sha256_12": "859e087b765f",
+      "json": "terminalbench/terminalbench_set1_30.json",
+      "txt": "terminalbench/terminalbench_set1_30.txt"
+    },
+    {
+      "benchmark": "terminalbench",
+      "set_id": "set2_30",
+      "n_tasks": 30,
+      "sha256_12": "81985cb1b226",
+      "json": "terminalbench/terminalbench_set2_30.json",
+      "txt": "terminalbench/terminalbench_set2_30.txt"
+    }
+  ]
+}

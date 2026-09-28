@@ -1,0 +1,31 @@
+{
+  "upstream_repository": "https://github.com/sierra-research/tau2-bench",
+  "upstream_commit": "0ed2fd8d830a20657d89ae9c2efcc94838aa7129",
+  "description": "Data files used by the source experiment that differ from the pinned upstream checkout. Paths are relative to TAU2_DATA_DIR.",
+  "files": [
+    {
+      "path": "tau2/domains/airline/tasks.json",
+      "bytes": 155528,
+      "sha256": "ccd8ba737b4cc371415af70151187788f728d6108d0916e73bb4317b40542052",
+      "upstream_sha256": "40d692b3fca780f46b56d48b447fd8db79a653f216667b8ed7c1a88380544532"
+    },
+    {
+      "path": "tau2/domains/retail/tasks.json",
+      "bytes": 345982,
+      "sha256": "8e03ebce7901bd6218e7a7dc3105faa9324091a68058f7fe61c65262868812e8",
+      "upstream_sha256": "76e1fa649a359bef2d2fd30eae834b99d261d84e2e5d364856f6632fdf778dfd"
+    },
+    {
+      "path": "tau2/user_simulator/simulation_guidelines.md",
+      "bytes": 1449,
+      "sha256": "740a29dfa64d7bc08eea3bf7493575b914a63f744acbaf7f199ee07eddaf72d3",
+      "upstream_sha256": "05f4f48e5beefcb527d81fdee6271ce0e997fa4721e8d3ae4db0e820fb0a9013"
+    },
+    {
+      "path": "tau2/user_simulator/simulation_guidelines_tools.md",
+      "bytes": 2747,
+      "sha256": "cbf3d8a4d8642fd04e559862f1afef55d7dd4e6a7e727ca49e239023c599de0c",
+      "upstream_sha256": "7b0cdb574909a15bb16e75296eb7a0c6b371fbe385a1b23a2fc8ea3751ee4b3b"
+    }
+  ]
+}

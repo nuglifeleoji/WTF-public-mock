@@ -1,0 +1,43 @@
+{
+  "benchmark": "browsecomp",
+  "set_id": "browsecomp_subset4_30",
+  "source_index_range": [
+    210,
+    239
+  ],
+  "selection_rule": "First 150 records in source-file order after excluding the initial Set1 and Set2 selections and previously run task IDs; split into five contiguous 30-task subsets.",
+  "n_tasks": 30,
+  "sha256_12": "2390f02a5451",
+  "task_ids": [
+    "491",
+    "493",
+    "494",
+    "495",
+    "496",
+    "497",
+    "498",
+    "499",
+    "500",
+    "501",
+    "502",
+    "503",
+    "505",
+    "506",
+    "507",
+    "509",
+    "511",
+    "512",
+    "513",
+    "514",
+    "515",
+    "516",
+    "517",
+    "519",
+    "520",
+    "521",
+    "523",
+    "524",
+    "525",
+    "527"
+  ]
+}
